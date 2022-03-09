@@ -30,7 +30,7 @@ public class Driver {
 		Behavior EmergencyStop = new EmergencyStop();
 		Behavior RabbitSoundsClap = new RabbitSoundsClap();
 		Behavior RabbitSoundsDark = new RabbitSoundsDark();
-		Arbitrator ab = new Arbitrator(new Behavior[] {RabbitSoundsClap, RabbitSoundsDark, EmergencyStop, BatteryLevel}); // Create arbitrator
+		Behavior RabbitSoundsLight = new RabbitSoundsLight();
+		Arbitrator ab = new Arbitrator(new Behavior[] {RabbitSoundsClap, RabbitSoundsDark, RabbitSoundsLight, EmergencyStop, BatteryLevel}); // Create arbitrator
 	}
-
 }
