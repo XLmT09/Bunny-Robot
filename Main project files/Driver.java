@@ -1,6 +1,8 @@
 import lejos.hardware.Button;
 import lejos.hardware.Sound;
 import lejos.hardware.lcd.LCD;
+import lejos.robotics.subsumption.Arbitrator;
+import lejos.robotics.subsumption.Behavior;
 
 public class Driver {
 	public void printVersion() {
@@ -24,6 +26,11 @@ public class Driver {
 
 	public static void main(String[] args) {
 		SplashScreen(); // Calls splash screen method
+		Behavior BatteryLevel = new BatteryLevel(); // Declare behaviours
+		Behavior EmergencyStop = new EmergencyStop();
+		Behavior RabbitSoundsClap = new RabbitSoundsClap();
+		Behavior RabbitSoundsDark = new RabbitSoundsDark();
+		Arbitrator ab = new Arbitrator(new Behavior[] {RabbitSoundsClap, RabbitSoundsDark, EmergencyStop, BatteryLevel}); // Create arbitrator
 	}
 
 }
