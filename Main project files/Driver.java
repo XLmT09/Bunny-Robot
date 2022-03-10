@@ -13,8 +13,8 @@ public class Driver {
 	public static void SplashScreen() { // Splash screen method
 		Sound.twoBeeps();
 		Button.LEDPattern(7);
-		LCD.drawString("Bash - version 1", 0, 0);
-		LCD.drawString("alpha (Feb 2022)", 0, 1);
+		LCD.drawString("Jack-Rabbit - ver. 1", 0, 0);
+		LCD.drawString("alpha (Mar 2022)", 0, 1);
 		LCD.drawString("", 0, 2);
 		LCD.drawString("By Robotics Group", 0, 3);
 		LCD.drawString("2 (Adam Tay,", 0, 4);
