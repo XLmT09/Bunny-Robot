@@ -28,7 +28,7 @@ public class Driver {
 		SplashScreen(); // Calls splash screen method
 		Behavior BatteryLevel = new BatteryLevel(); // Declare behaviours
 		Behavior EmergencyStop = new EmergencyStop();
-		Behavior RabbitSoundsClap = new RabbitSoundsClap();
+		Behavior RabbitSoundsClap = new RabbitSoundsClap(); // TODO: Combine RabbitSounds group of behaviours
 		Behavior RabbitSoundsDark = new RabbitSoundsDark();
 		Behavior RabbitSoundsLight = new RabbitSoundsLight();
 		Arbitrator ab = new Arbitrator(new Behavior[] {RabbitSoundsClap, RabbitSoundsDark, RabbitSoundsLight, EmergencyStop, BatteryLevel}); // Create arbitrator
