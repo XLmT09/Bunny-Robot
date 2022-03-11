@@ -8,8 +8,8 @@ This is the first version of documentation for the CS1822RoboticsProjectNew repo
 <b>Authors: Hiji Arunthavarajah, Sam Brown, Bharat Karki and Adam Tay</b>
 ## Bugs in program by class
 ### Driver class
-~~1. NullPointerException thrown when EmergencyStop behaviour takes control of the robot. This is probably to do with the Behaviour array within the arbitrator object or lack of arguments in the declaration of the EmergencyStop behaviour.~~<br><br><b>UPDATE: Bug is now fixed, NullPointerException is no longer being thrown.</b><br><br>
-2. EmergencyStop behaviour does not work altogether.
+~~1. NullPointerException thrown when EmergencyStop behaviour takes control of the robot. This is probably to do with the Behaviour array within the arbitrator object or lack of arguments in the declaration of the EmergencyStop behaviour.~~<b> UPDATE: Bug is now fixed, NullPointerException is no longer being thrown.</b><br><br>
+~~2. EmergencyStop behaviour does not work altogether.~~<b> UPDATE: Bug is now fixed, EmergencyStop behaviour works properly.</b>
 ## Classes and descriptions
 ### Driver
 The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.
