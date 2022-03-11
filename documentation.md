@@ -19,3 +19,9 @@ Priorities of behaviours are listed below from highest to lowest:
 4. Walkabout
 ### Walkabout
 The Walkabout class is an overarching behaviour class that combines all movement-related behaviour classes together.
+## Positions of sensors
+Sensors are located in the following ports on the brick:
+* Sensor port 1 - Sound sensor
+* Sensor port 2 - Ultrasonic sensor
+* Sensor port 3 - Light sensor
+* Sensor port 4 - Unused sensor port
