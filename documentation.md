@@ -1,6 +1,6 @@
 # CS1822RoboticsProjectNew documentation
 ## Details
-This is the first version of documentation for the CS1822RoboticsProjectNew repository.
+This is the documentation for the CS1822RoboticsProjectNew repository.
 <br>
 <br>
 <b>Creation date: March 11th, 2022</b>
