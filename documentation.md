@@ -1,6 +1,8 @@
 # CS1822RoboticsProjectNew documentation
 ## Details
 This is the first version of documentation for the CS1822RoboticsProjectNew repository.
+<br>
+<br>
 <b>Created on: March 11th, 2022</b>
 <br>
 <b>Authors: Hiji Arunthavarajah, Sam Brown, Bharat Karki and Adam Tay</b>
