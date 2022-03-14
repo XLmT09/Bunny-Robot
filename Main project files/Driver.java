@@ -14,7 +14,7 @@ import lejos.robotics.subsumption.Behavior;
 
 public class Driver {
 	public void printVersion() {
-		LCD.drawString("V3 - Robotics Group 2", 0, 0);
+		LCD.drawString("V3.1 - Robotics Group 2", 0, 0);
 		LCD.drawString("Driver class by Adam Tay", 0, 1);
 	}
 	
@@ -30,6 +30,7 @@ public class Driver {
 		LCD.drawString("Bharat Karki and", 0, 6);
 		LCD.drawString("Hiji A.)", 0, 7);
 		Button.ENTER.waitForPressAndRelease();
+		LCD.clear();
 	}
 	
 	private static MovePilot getPilot(Port left, Port right, int diam, int offset) {
