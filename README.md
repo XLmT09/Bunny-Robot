@@ -2,6 +2,12 @@
 ## About this repository
 This repository is created for Robotics Group 2 to upload and download files in order to facilitate easier collaboration between group members.
 All group members have migrated from the old repository to this new repository and the old repository has since been archived.
+## Documentation
+This repository has documentation, available here: https://github.com/originalAdamTay/CS1822RoboticsProjectNew/blob/main/documentation.md
+### Bugs and bug fixes
+Within the documentation, there is a section on bugs which we have encountered in the program, sorted by the class in which the bug has been found.<br><br>When you encounter bugs in the program, please add the class in which you have encountered the bug and a brief description of the bug to the documentation in order to facilitate the debugging process.
+#### Fixing of bugs
+When bugs have been fixed, please strike through the description of the bug and state that the bug has been fixed. After a period of time fixed bugs will be removed from the documentation.
 ## Organisation of the repository
 Files will be subdivided into directories within the repository to facilitate better organisation and allow for files to be found more easily. When <b>creating new directories</b>,
 please create a new lipsum (<i>lorem ipsum</i>) text file to populate the empty folder until files have been organised. After moving files to directories, the lipsum file can be deleted.
