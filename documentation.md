@@ -20,7 +20,7 @@ Priorities of behaviours are listed below from highest to lowest:
 3. RabbitSounds
 4. Walkabout
 ### Walkabout
-The Walkabout class is an overarching behaviour class that combines all movement-related behaviour classes together.
+The Walkabout class is an overarching behaviour class that combines all movement-related behaviour classes together, except the TableTrundle and Obstacle classes.<br><br>Both the TableTrundle and Obstacle classes will handle the behaviour of the robot if it is near the edge of the table, or if it encounters an obstacle respectively, and will be of separate priorities to the main Walkabout class of behaviours.
 ## Positions of sensors
 Sensors are located in the following ports on the brick:
 * Sensor port 1 - Sound sensor
