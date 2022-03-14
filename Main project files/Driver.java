@@ -46,7 +46,7 @@ public class Driver {
 	public static void main(String[] args) {
 		SplashScreen(); // Calls splash screen method
 		MovePilot pilot = getPilot(MotorPort.A, MotorPort.C, 60, 29);
-		pilot.setLinearSpeed(50);
+		pilot.setLinearSpeed(180);
 		Behavior BatteryLevel = new BatteryLevel(); // Declare behaviours
 		Behavior EmergencyStop = new EmergencyStop();
 		Behavior RabbitSounds = new RabbitSounds();
