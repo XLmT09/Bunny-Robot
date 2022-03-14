@@ -8,7 +8,8 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 <b>Authors: Hiji Arunthavarajah, Sam Brown, Bharat Karki and Adam Tay</b>
 ## Bugs in program by class
 ### Driver
-NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
+* NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
+* IllegalArgumentException encountered in LightLevel behaviour - sensor mode is not recognised by program.
 ## Classes and descriptions
 ### Driver
 The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.
