@@ -10,6 +10,7 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 ### Driver
 * NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
 * IllegalArgumentException encountered in LightLevel behaviour - sensor mode is not recognised by program.
+* ~~DeviceException encountered - Driver class is unable to open sensor port.~~ <b>UPDATE: Fixed bug by changing sensor port.</b>
 ## Classes and descriptions
 ### Driver
 The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.
@@ -26,6 +27,6 @@ The Walkabout class is an overarching behaviour class that combines all movement
 ## Positions of sensors
 Sensors are located in the following ports on the brick:
 * Sensor port 1 - Sound sensor
-* Sensor port 2 - Ultrasonic sensor
+* Sensor port 2 - Unused sensor port
 * Sensor port 3 - Light sensor
-* Sensor port 4 - Unused sensor port
+* Sensor port 4 - Ultrasonic sensor
