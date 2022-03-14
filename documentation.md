@@ -10,7 +10,7 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 ### Driver
 * NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
 * IllegalArgumentException encountered in LightLevel behaviour - sensor mode is not recognised by program.
-* ~~DeviceException encountered - Driver class is unable to open sensor port.~~ <b>UPDATE: Fixed bug by changing sensor port.</b>
+* DeviceException encountered - Driver class is unable to open sensor port.
 ## Classes and descriptions
 ### Driver
 The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.
