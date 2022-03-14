@@ -7,7 +7,8 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 <br>
 <b>Authors: Hiji Arunthavarajah, Sam Brown, Bharat Karki and Adam Tay</b>
 ## Bugs in program by class
-There are currently no active bugs.
+### Driver
+NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
 ## Classes and descriptions
 ### Driver
 The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.
