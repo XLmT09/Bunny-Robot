@@ -1,0 +1,33 @@
+import lejos.hardware.motor.BaseRegulatedMotor;
+import lejos.hardware.motor.NXTRegulatedMotor;
+import lejos.hardware.port.MotorPort;
+import lejos.hardware.port.Port;
+import lejos.robotics.chassis.Chassis;
+import lejos.robotics.chassis.Wheel;
+import lejos.robotics.chassis.WheeledChassis;
+import lejos.robotics.navigation.MovePilot;
+import lejos.robotics.subsumption.Arbitrator;
+import lejos.robotics.subsumption.Behavior;
+
+public class Main {
+	public static void main(String[] args) {
+		MovePilot pilot = getPilot(MotorPort.A, MotorPort.C, 60, 29);
+		pilot.setLinearSpeed(50);
+		Forward forward = new Forward(pilot);
+		//BatteryLevel btLevel = new BatteryLevel();
+		EmergencyStop stop = new EmergencyStop(pilot);
+		CarrotColor carrotCol = new CarrotColor(pilot);
+		Arbitrator ab = new Arbitrator(new Behavior[] {forward, carrotCol, stop});
+		ab.go();
+	}
+	
+	private static MovePilot getPilot(Port left, Port right, int diam, int offset) {
+		BaseRegulatedMotor mL = new NXTRegulatedMotor(left);
+		Wheel wL = WheeledChassis.modelWheel(mL, diam).offset(-1 * offset);
+		BaseRegulatedMotor mR = new NXTRegulatedMotor(right);
+		Wheel wR = WheeledChassis.modelWheel(mR, diam).offset(offset);
+		Wheel[] wheels = new Wheel[] {wR, wL};
+		Chassis chassis = new WheeledChassis(wheels, WheeledChassis.TYPE_DIFFERENTIAL);
+		return new MovePilot(chassis);
+	}
+}
