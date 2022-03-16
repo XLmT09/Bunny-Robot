@@ -6,6 +6,9 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 <b>Creation date: March 11th, 2022</b>
 <br>
 <b>Authors: Hiji Arunthavarajah, Sam Brown, Bharat Karki and Adam Tay</b>
+### Development phase history
+* Alpha: March 11th, 2022 - March 16th, 2022
+* Beta: March 16th, 2022 - present
 ## Bugs in program by class
 ### Driver
 * NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
