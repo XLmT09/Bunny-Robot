@@ -30,10 +30,8 @@ public class LightLevel implements Behavior {
 	
 	public void action() {
 		pilot.setLinearSpeed(100);
-		// plays wav file at full volume
-		//Sound.playSample(new File("scared rabbit sound.wav"), Sound.VOL_MAX);
-		// red flashing LED light on EV3 brick
-		//Button.LEDPattern(5);
+		//Sound.playSample(new File("scared rabbit sound.wav"), Sound.VOL_MAX); // plays wav file at full volume
+		//Button.LEDPattern(5); // red flashing LED light on EV3 brick
 		LCD.drawString("" + lightLevel[0], 0, 3);
 		
 	}
