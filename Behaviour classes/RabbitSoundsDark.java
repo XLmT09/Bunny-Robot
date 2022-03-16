@@ -1,38 +1,45 @@
-import java.io.File;
-
 import lejos.hardware.Button;
-import lejos.hardware.Sound;
 import lejos.hardware.lcd.LCD;
+import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.robotics.SampleProvider;
 import lejos.robotics.navigation.MovePilot;
 import lejos.robotics.subsumption.Behavior;
 
-public class RabbitSoundsDark implements Behavior {
+public class LightLevel implements Behavior {
 	private MovePilot pilot;
-	private SampleProvider colorSample;
-	private float[] darkLevel = new float[1];
+	private EV3ColorSensor cs;
+	SampleProvider sp;
+	float[] lightLevel = new float[1];
+	private boolean suppressed = true;
+	
+	public LightLevel(MovePilot p, EV3ColorSensor cs) {
+		this.pilot = p;
+		this.cs = cs;
+		this.sp = cs.getAmbientMode();
+	}
 	
 	public void printVersion() {
 		LCD.drawString("V1 - Robotics Group 2", 0, 0);
-		LCD.drawString("Rabbit sounds (dark) sequence by Adam Tay", 0, 1);
+		LCD.drawString("Rabbit sounds (combined) sequence by Adam Tay", 0, 1);
 	}
 	
 	public boolean takeControl() {
-		colorSample.fetchSample(darkLevel, 0);
-		return darkLevel[0] < 0.5f;
+		cs.fetchSample(lightLevel, 0);
+		return lightLevel[0] == 0.00f;
 	}
 	
 	public void action() {
-		pilot.stop();
-		Sound.playSample(new File("scared rabbit sound.wav"), Sound.VOL_MAX); // plays wav file at full volume
-		Button.LEDPattern(5); // red flashing LED light on EV3 brick
-		LCD.drawString("Too dark!", 0, 0);
-		Button.ENTER.waitForPressAndRelease();
-		LCD.clear();
+		pilot.setLinearSpeed(100);
+		// plays wav file at full volume
+		//Sound.playSample(new File("scared rabbit sound.wav"), Sound.VOL_MAX);
+		// red flashing LED light on EV3 brick
+		//Button.LEDPattern(5);
+		LCD.drawString("" + lightLevel[0], 0, 3);
+		
 	}
 	
 	public void suppress() {
-		pilot.setLinearSpeed(720);
-		pilot.forward();
+		LCD.clear();
+		pilot.setLinearSpeed(180);	
 	}
 }
