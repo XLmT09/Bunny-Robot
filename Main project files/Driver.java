@@ -22,7 +22,7 @@ public class Driver {
 		Sound.twoBeeps();
 		Button.LEDPattern(7);
 		LCD.drawString("Jack-Rabbit - ver.", 0, 0);
-		LCD.drawString("1 alpha (Mar 2022)", 0, 1);
+		LCD.drawString("1 beta (Mar 2022)", 0, 1);
 		LCD.drawString("", 0, 2);
 		LCD.drawString("By Robotics Group", 0, 3);
 		LCD.drawString("2 (Adam Tay,", 0, 4);
