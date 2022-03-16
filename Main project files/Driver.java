@@ -14,7 +14,7 @@ import lejos.robotics.subsumption.Behavior;
 
 public class Driver {
 	public void printVersion() {
-		LCD.drawString("V3.1 - Robotics Group 2", 0, 0);
+		LCD.drawString("V4 - Robotics Group 2", 0, 0);
 		LCD.drawString("Driver class by Adam Tay", 0, 1);
 	}
 	
@@ -50,8 +50,9 @@ public class Driver {
 		Behavior BatteryLevel = new BatteryLevel(); // Declare behaviours
 		Behavior EmergencyStop = new EmergencyStop();
 		Behavior RabbitSounds = new RabbitSounds();
+		Behavior RabbitSoundsTableTrundle = new RabbitSoundsTableTrundle();
 		Behavior Walkabout = new Walkabout(null); // TODO: Implement MovePilot object into Walkabout behaviour as argument
-		Arbitrator ab = new Arbitrator(new Behavior[] {Walkabout, RabbitSounds, EmergencyStop, BatteryLevel}); // Create arbitrator
+		Arbitrator ab = new Arbitrator(new Behavior[] {Walkabout, RabbitSounds, RabbitSoundsTableTrundle, EmergencyStop, BatteryLevel}); // Create arbitrator
 		ab.go();
 	}
 }
