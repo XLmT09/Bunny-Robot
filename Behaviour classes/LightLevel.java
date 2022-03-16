@@ -8,9 +8,13 @@ import lejos.robotics.subsumption.Behavior;
 public class LightLevel implements Behavior {
 	private MovePilot pilot;
 	private EV3ColorSensor cs;
-	SampleProvider sp;
-	float[] lightLevel = new float[1];
-	private boolean suppressed = true;
+	private SampleProvider sp;
+	private float[] lightLevel = new float[1];
+	
+	public void printVersion() {
+		LCD.drawString("V1 - Robotics Group 2", 0, 0);
+		LCD.drawString("Light level behaviour by Hiji", 0, 1);
+	}
 	
 	public LightLevel(MovePilot p, EV3ColorSensor cs) {
 		this.pilot = p;
@@ -18,14 +22,9 @@ public class LightLevel implements Behavior {
 		this.sp = cs.getAmbientMode();
 	}
 	
-	public void printVersion() {
-		LCD.drawString("V1 - Robotics Group 2", 0, 0);
-		LCD.drawString("Light level behaviour by Hiji", 0, 1);
-	}
-	
 	public boolean takeControl() {
 		cs.fetchSample(lightLevel, 0);
-		return lightLevel[0] == 0.00f;
+		return lightLevel[0] == 0.00f; // return true if completely dark - for testing purposes only
 	}
 	
 	public void action() {
