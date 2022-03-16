@@ -15,7 +15,7 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 * IllegalArgumentException encountered in LightLevel behaviour - sensor mode is not recognised by program.
 * DeviceException encountered - Driver class is unable to open sensor port.
 ### LightLevel
-* Behaviour moves to action and stays on action, even when suppress method is triggered.
+* Behaviour moves to action and stays on action, even when suppress method is triggered.<br><br><b>Tried changing light level in takeControl() method to 0.01f, does not work after this.</b><br><br>TODO: Change sensor mode to RGB sensor mode.
 ## Classes and descriptions
 ### Driver
 The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.
