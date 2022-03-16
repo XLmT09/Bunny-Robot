@@ -11,15 +11,15 @@ public class LightLevel implements Behavior {
 	private SampleProvider sp;
 	private float[] lightLevel = new float[1];
 	
-	public void printVersion() {
-		LCD.drawString("V1 - Robotics Group 2", 0, 0);
-		LCD.drawString("Light level behaviour by Hiji", 0, 1);
-	}
-	
 	public LightLevel(MovePilot p, EV3ColorSensor cs) {
 		this.pilot = p;
 		this.cs = cs;
 		this.sp = cs.getAmbientMode();
+	}
+	
+	public void printVersion() {
+		LCD.drawString("V1 - Robotics Group 2", 0, 0);
+		LCD.drawString("Light level behaviour by Hiji", 0, 1);
 	}
 	
 	public boolean takeControl() {
