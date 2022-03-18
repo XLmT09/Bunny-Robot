@@ -12,7 +12,7 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 ## Bugs in program by class
 ### CarrotColor
 * ~~NoSuchMethodException encountered in CarrotColor behaviour.~~ <b>UPDATE: Fixed by adding main method.</b>
-* NullPointerException encountered after adding main method.
+* ~~NullPointerException encountered after adding main method.~~ <b>UPDATE: CarrotColor method fixed, NullPointerException no longer encountered.</b>
 ### Driver
 * NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
 * IllegalArgumentException encountered in LightLevel behaviour - sensor mode is not recognised by program.
