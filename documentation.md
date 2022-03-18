@@ -10,9 +10,6 @@ This is the documentation for the CS1822RoboticsProjectNew repository.
 * Alpha: March 11th, 2022 - March 16th, 2022
 * Beta: March 16th, 2022 - present
 ## Bugs in program by class
-### CarrotColor
-* ~~NoSuchMethodException encountered in CarrotColor behaviour.~~ <b>UPDATE: Fixed by adding main method.</b>
-* ~~NullPointerException encountered after adding main method.~~ <b>UPDATE: CarrotColor method fixed, NullPointerException no longer encountered.</b>
 ### Driver
 * NullPointerException encountered in LightLevel behaviour, specifically when light level is too dark.
 * IllegalArgumentException encountered in LightLevel behaviour - sensor mode is not recognised by program.
