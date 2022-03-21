@@ -20,7 +20,7 @@ public class Walkabout implements Behavior {
 	}
 	
 	public boolean takeControl() {
-		return true; // placeholder boolean
+		return true; // return true - always take control
 	}
 	
 	public void action() {
