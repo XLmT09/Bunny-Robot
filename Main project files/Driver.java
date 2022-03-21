@@ -24,6 +24,21 @@ public class Driver {
 		Button.ENTER.waitForPressAndRelease();
 		LCD.clear();
 	}
+	
+	public static float calibrateMax(SampleProvider soundSampleProvider) {
+		float[] maxSoundSample = new float[1];
+		float maxSoundLevel = 0.f;
+		
+		while (Button.ENTER.isUp()) {
+			soundSampleProvider.fetchSample(maxSoundSample, 0);
+			
+			if (maxSoundSample[0] > maxSoundLevel) {
+				maxSoundLevel = maxSoundSample[0];
+			}
+		}
+		
+		return maxSoundLevel;
+	}
 
 	public static void main(String[] args) {
 		SplashScreen(); // Calls splash screen method
