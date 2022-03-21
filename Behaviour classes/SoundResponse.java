@@ -1,12 +1,16 @@
 import lejos.hardware.Button;
 import lejos.hardware.Sound;
 import lejos.hardware.lcd.LCD;
+import lejos.hardware.motor.BaseRegulatedMotor;
+import lejos.hardware.motor.NXTRegulatedMotor;
+import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.Port;
 import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.NXTSoundSensor;
 import lejos.hardware.sensor.SensorMode;
 import lejos.robotics.SampleProvider;
 import lejos.robotics.navigation.MovePilot;
+import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
 
 class SoundFilter implements SampleProvider{
@@ -50,12 +54,13 @@ class SoundFilter implements SampleProvider{
 
 class SoundResponse implements Behavior {
 	
-	private MovePilot pilot;
 	private SampleProvider soundSampleProvider;
 	private float[] soundSample = new float[1];
 	private float maxSoundLevel;
+	private BaseRegulatedMotor mLeft;
+	private BaseRegulatedMotor mRight;
 	
-	public SoundResponse(SoundFilter soundSampleProvider, float maxSoundLevel) {
+	public SoundResponse(SoundFilter soundSampleProvider, float maxSoundLevel, BaseRegulatedMotor mLeft, BaseRegulatedMotor mRight) {
 		this.soundSampleProvider = soundSampleProvider;
 		this.maxSoundLevel = maxSoundLevel;
 	}
@@ -69,7 +74,11 @@ class SoundResponse implements Behavior {
 
 	@Override
 	public void action() {
-		pilot.stop();
+		mLeft.synchronizeWith(new BaseRegulatedMotor [] {mRight});
+		mLeft.startSynchronization();
+		mLeft.stop();
+		mRight.stop();
+		mLeft.endSynchronization();
 		Button.LEDPattern(5);
 		LCD.drawString("I heard something", 0, 0);
 		Button.ENTER.waitForPressAndRelease();
@@ -79,7 +88,13 @@ class SoundResponse implements Behavior {
 	@Override
 	public void suppress() {
 		((SoundFilter) soundSampleProvider).setThreshold(maxSoundLevel);
-		pilot.setLinearSpeed(180);
-		pilot.forward();
+		
+		mLeft.setSpeed(180);
+		mRight.setSpeed(180);
+		mLeft.synchronizeWith(new BaseRegulatedMotor [] {mRight});
+		mLeft.startSynchronization();
+		mLeft.forward();
+		mRight.forward();
+		mLeft.endSynchronization();
 	}
 }
