@@ -48,6 +48,8 @@ public class Driver {
 		Behavior RabbitSounds = new RabbitSounds();
 		Behavior RabbitSoundsTableTrundle = new RabbitSoundsTableTrundle();
 		Behavior Walkabout = new Walkabout();
+		SoundFilter filteredSoundSampleProvider = (SoundFilter) new SoundFilter(soundMode, maxSoundLevel, 100);
+		Behavior SoundResponse = new SoundResponse(filteredSoundSampleProvider, maxSoundLevel, mLeft, mRight);
 		Arbitrator ab = new Arbitrator(new Behavior[] {Walkabout, RabbitSounds, RabbitSoundsTableTrundle, CheckColor, EmergencyStop, BatteryLevel}); // Create arbitrator
 		ab.go();
 	}
