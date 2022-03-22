@@ -8,6 +8,7 @@ import lejos.hardware.port.MotorPort;
 //import lejos.hardware.port.Port;
 import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.EV3ColorSensor;
+import lejos.hardware.sensor.EV3TouchSensor;
 import lejos.hardware.sensor.EV3UltrasonicSensor;
 //import lejos.robotics.chassis.Chassis;
 //import lejos.robotics.chassis.Wheel;
