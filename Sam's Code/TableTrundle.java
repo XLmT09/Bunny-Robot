@@ -2,6 +2,7 @@ import java.util.Random;
 
 import lejos.hardware.motor.BaseRegulatedMotor;
 import lejos.hardware.sensor.EV3UltrasonicSensor;
+import lejos.hardware.sensor.EV3TouchSensor;
 import lejos.robotics.SampleProvider;
 import lejos.robotics.subsumption.Behavior;
 import lejos.utility.Delay;
@@ -14,7 +15,8 @@ public class TableTrundle implements Behavior {
 	
 	private BaseRegulatedMotor mL, mR;
 	private EV3UltrasonicSensor us;
-	SampleProvider sp;
+	private EV3TouchSensor ts;
+	SampleProvider ussp, tssp;
 	private float[] sample = new float[1];
 	private String sampleString;
 	private Random rgen = new Random();
@@ -25,7 +27,10 @@ public class TableTrundle implements Behavior {
 		this.mR = mR;
 		
 		this.us = us;
-		this.sp = us.getDistanceMode();
+		this.ussp = us.getDistanceMode();
+		
+		this.ts = ts;
+		this.tssp = ts.getTouchMode();
 	}
 	
 	/**
@@ -35,8 +40,10 @@ public class TableTrundle implements Behavior {
 	public boolean takeControl() {
 		us.fetchSample(sample, 0);
 		sampleString = Float.toString(sample[0]);
-		return ((sample[0] > 0.5) || (sampleString.equals("Infinity")));
-		// return ( !(sample[0] < 0.35f && sample[0] > 0.15f) || !(sampleString.equals("Infinity")) );
+		
+		ts.fetchSample(sample, 1);
+		
+		return (sample[0] > 0.3) || (sampleString.equals("Infinity")) || (sample[1] >= 0.1f || (mL.isStalled() && mR.isStalled()));
 	}
 	
 	@Override
