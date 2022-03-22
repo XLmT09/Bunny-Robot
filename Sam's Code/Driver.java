@@ -67,9 +67,10 @@ public class Driver {
 		
 		EV3UltrasonicSensor us = new EV3UltrasonicSensor(SensorPort.S4);
 		EV3ColorSensor cs = new EV3ColorSensor(SensorPort.S3);
+		EV3TouchSensor ts = new EV3TouchSensor(SensorPort.S1);
 		
 		Behavior trundle = new Trundle(mLeft, mRight, mHead);
-		Behavior tableTrundle = new TableTrundle(mLeft, mRight, us);
+		Behavior tableTrundle = new TableTrundle(mLeft, mRight, us, ts);
 		Behavior lightLevel = new LightLevel(mLeft, mRight, cs);
 		Behavior emergencyStop = new EmergencyStop();
 		Behavior batteryLevel = new BatteryLevel();
