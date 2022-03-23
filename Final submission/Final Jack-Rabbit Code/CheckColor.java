@@ -60,6 +60,8 @@ public class CheckColor implements Behavior {
 			Sound.buzz();
 		} 
 		else if (isGreenOrange) {
+			LCD.drawString("Ooh - yummy!", 1, 2);
+			LCD.drawString("Don't mind if I do...", 1, 3);
 			Sound.beepSequence();
 			Sound.beepSequenceUp();
 			Delay.msDelay(ONE_SECOND);
