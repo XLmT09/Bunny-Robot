@@ -77,6 +77,8 @@ public class TableTrundle implements Behavior {
 		mR.rotate(-1 * num);
 		mL.endSynchronization();
 		
+		LCD.clear();
+		
 		//if the behaviour runs again, this will prevent it from running too consistently
 		Delay.msDelay(ONE_SECOND);
 	}
