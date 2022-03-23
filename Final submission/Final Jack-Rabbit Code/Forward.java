@@ -16,7 +16,7 @@ public class Forward implements Behavior {
 	}
 
 	public void action() {
-		LCD.drawString("Chugging along!", 2, 1);
+		LCD.drawString("Chugging along!", 1, 2);
 		
 		mLeft.setSpeed(180);
 		mRight.setSpeed(180);
@@ -32,5 +32,7 @@ public class Forward implements Behavior {
 		mLeft.stop();
 		mRight.stop();
 		mLeft.endSynchronization();
+		
+		LCD.clear();
 	}
 }
