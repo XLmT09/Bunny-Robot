@@ -4,6 +4,7 @@ import lejos.robotics.subsumption.Behavior;
 import lejos.utility.Delay;
 
 public class BatteryLevel implements Behavior {
+	private final int FIVE_SECONDS = 5000;
 	
 	public boolean takeControl() {
 		return Battery.getVoltage() <= 6.4;
@@ -15,7 +16,7 @@ public class BatteryLevel implements Behavior {
 		LCD.drawString("Shutting Down.", 1, 3);
 
 		//delay for messages to persist on LCD
-		Delay.msDelay(5000);
+		Delay.msDelay(FIVE_SECONDS);
 		//end program
 		System.exit(0);
 	}
