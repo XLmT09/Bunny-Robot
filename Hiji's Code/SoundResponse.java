@@ -38,10 +38,11 @@ class SoundResponse implements Behavior {
 		Button.LEDPattern(5);
 		LCD.drawString("I heard something", 0, 3);
 		Delay.msDelay(3000);
-		LCD.clear();
 	}
 
 	@Override
 	public void suppress() {
+		LCD.clear();
+		Button.LEDPattern(0);
 	}
 }
