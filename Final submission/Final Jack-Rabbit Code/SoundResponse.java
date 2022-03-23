@@ -39,9 +39,10 @@ class SoundResponse implements Behavior {
 		mLeft.endSynchronization();
 		
 		Button.LEDPattern(5); //Red lights to express surprise
-		LCD.drawString("I heard something", 1, 3);
+		LCD.drawString("AH! What was that?!", 1, 2);
 		Sound.buzz();
 		Delay.msDelay(3000); //Delay for message to persist on LCD
+		LCD.clear();
 		Sound.beep();
 	}
 
