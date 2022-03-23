@@ -74,6 +74,8 @@ public class CheckColor implements Behavior {
 		isDark = false;
 	}
 	
-	public void suppress() {} 
+	public void suppress() {
+		LCD.clear();
+	} 
 
 }
