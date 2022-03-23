@@ -10,7 +10,7 @@ public class EmergencyStop implements Behavior {
 	
 	public void action() {
 		LCD.clear();
-		LCD.drawString("Shutting Down", 0, 1);
+		LCD.drawString("Shutting Down", 1, 2);
 		Delay.msDelay(1000); //Delay for message to persist on LCD
 		System.exit(0); //End program
 	}
