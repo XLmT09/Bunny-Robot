@@ -6,6 +6,8 @@ public class Forward implements Behavior {
 	private BaseRegulatedMotor mLeft;
 	private BaseRegulatedMotor mRight;
 	
+	private final int NORMAL_SPEED = 180;
+	
 	Forward(BaseRegulatedMotor left, BaseRegulatedMotor right) {
 		this.mLeft = left;
 		this.mRight = right;
@@ -18,8 +20,8 @@ public class Forward implements Behavior {
 	public void action() {
 		LCD.drawString("Chugging along!", 1, 2);
 		
-		mLeft.setSpeed(180);
-		mRight.setSpeed(180);
+		mLeft.setSpeed(NORMAL_SPEED);
+		mRight.setSpeed(NORMAL_SPEED);
 		
 		mLeft.startSynchronization();
 		mLeft.forward();
