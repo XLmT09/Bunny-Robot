@@ -52,6 +52,8 @@ public class TableTrundle implements Behavior {
 		num = (2 * rgen.nextInt(2) - 1) * NINETY_DEGREES; //allows the bot to turn ninety degrees in a random direction
 		
 		Sound.twoBeeps();
+		LCD.drawString("Woah - that's not good!", 1, 2);
+		LCD.drawString("Let me just... back up...", 1, 3);
 		
 		//lower speed to back up
 		mL.setSpeed(100);
