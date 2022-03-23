@@ -4,7 +4,7 @@ import lejos.robotics.subsumption.Behavior;
 import lejos.utility.Delay;
 
 public class EmergencyStop implements Behavior {	
-	private static int ONE_SECOND = 1000;
+	private final int ONE_SECOND = 1000;
 	
 	public boolean takeControl() {
 		return Button.ENTER.isDown(); //returns if enter button is pressed
