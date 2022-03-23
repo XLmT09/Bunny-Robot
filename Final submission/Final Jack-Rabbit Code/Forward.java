@@ -6,7 +6,7 @@ public class Forward implements Behavior {
 	private BaseRegulatedMotor mLeft;
 	private BaseRegulatedMotor mRight;
 	
-	final static int NORMAL_SPEED = 180;
+	private final int NORMAL_SPEED = 180;
 	
 	Forward(BaseRegulatedMotor left, BaseRegulatedMotor right) {
 		this.mLeft = left;
