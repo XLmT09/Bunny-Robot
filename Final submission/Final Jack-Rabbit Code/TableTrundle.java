@@ -12,6 +12,8 @@ public class TableTrundle implements Behavior {
 	private final int NINETY_DEGREES = 360;
 	private final int TWO_SECOND = 2000;
 	private final int ONE_SECOND = 1000;
+	private final int BACK_UP_SPEED = 100;
+	private final int TURNING_SPEED = 200;
 	
 	private BaseRegulatedMotor mL, mR;
 	private EV3UltrasonicSensor us;
@@ -56,8 +58,8 @@ public class TableTrundle implements Behavior {
 		LCD.drawString("Let me just... back up...", 1, 3);
 		
 		//lower speed to back up
-		mL.setSpeed(100);
-		mR.setSpeed(100);
+		mL.setSpeed(BACK_UP_SPEED);
+		mR.setSpeed(BACK_UP_SPEED);
 
 		//back up
 		mL.startSynchronization();
@@ -68,8 +70,8 @@ public class TableTrundle implements Behavior {
 		Delay.msDelay(TWO_SECOND); //this will ensure it only backs up for 2 seconds
 		
 		//increase speed to turn around
-		mL.setSpeed(200);
-		mR.setSpeed(200);
+		mL.setSpeed(TURNING_SPEED);
+		mR.setSpeed(TURNING_SPEED);
 
 		//turn 90 degrees
 		mL.startSynchronization();
