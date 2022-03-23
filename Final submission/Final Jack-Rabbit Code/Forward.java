@@ -16,7 +16,7 @@ public class Forward implements Behavior {
 	}
 
 	public void action() {
-		LCD.clear();
+		LCD.drawString("Chugging along!", 2, 1);
 		
 		mLeft.setSpeed(180);
 		mRight.setSpeed(180);
