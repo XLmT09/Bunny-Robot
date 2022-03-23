@@ -1,35 +1,44 @@
 import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.BaseRegulatedMotor;
+import lejos.hardware.motor.EV3MediumRegulatedMotor;
 import lejos.hardware.motor.NXTRegulatedMotor;
 import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.EV3ColorSensor;
+import lejos.hardware.sensor.EV3TouchSensor;
 import lejos.hardware.sensor.EV3UltrasonicSensor;
 import lejos.hardware.sensor.NXTSoundSensor;
-import lejos.robotics.SampleProvider;
 import lejos.robotics.subsumption.Arbitrator;
 import lejos.robotics.subsumption.Behavior;
 
 public class Main {
+	final static int HEAD_ROTATION = -120;
+	final static int HEAD_ROTATION_CALIB = 180;
+	
 	public static void main(String[] args) {
 		BaseRegulatedMotor mLeft = new NXTRegulatedMotor(MotorPort.A);
 		BaseRegulatedMotor mRight = new NXTRegulatedMotor(MotorPort.C);
-		EV3ColorSensor cs = new EV3ColorSensor(SensorPort.S3);
-		NXTSoundSensor us = new NXTSoundSensor(SensorPort.S2);
-		EV3UltrasonicSensor ds = new EV3UltrasonicSensor(SensorPort.S4);
-		SampleProvider sp = cs.getRGBMode();
+		EV3ColorSensor colSensor = new EV3ColorSensor(SensorPort.S3);
+		NXTSoundSensor soundSensor = new NXTSoundSensor(SensorPort.S2);
+		EV3TouchSensor touchSensor = new EV3TouchSensor(SensorPort.S1);
+		EV3UltrasonicSensor distSensor = new EV3UltrasonicSensor(SensorPort.S4);
+		BaseRegulatedMotor mHead = new EV3MediumRegulatedMotor(MotorPort.B);
 		
 		SplashScreen();
-		float backgroundNoise = Calibrate.calibrateBackground(us);
+		float backgroundNoise = Calibrate.calibrateBackground(soundSensor);
 		mLeft.synchronizeWith(new BaseRegulatedMotor[] {mRight});
 		
-		Forward forward = new Forward(mLeft, mRight);
+		
+		mHead.rotate(HEAD_ROTATION_CALIB);
+		mHead.rotate(HEAD_ROTATION);
+		
+		Forward forward = new Forward(mLeft, mRight, mHead);
 		BatteryLevel btLevel = new BatteryLevel();
 		EmergencyStop stop = new EmergencyStop();
-		CheckColor checkCol = new CheckColor(mLeft, mRight, sp);
-		SoundResponse sound = new SoundResponse(mLeft, mRight, us, backgroundNoise);
-		CheckFloor floor = new CheckFloor(mLeft, mRight, ds);
+		CheckColor checkCol = new CheckColor(mLeft, mRight, colSensor, mHead);
+		SoundResponse sound = new SoundResponse(mLeft, mRight, soundSensor, backgroundNoise);
+		CheckFloor floor = new CheckFloor(mLeft, mRight, distSensor, touchSensor);
 		Arbitrator ab = new Arbitrator(new Behavior[] {forward, checkCol, sound, floor, stop, btLevel});
 
 		ab.go();
