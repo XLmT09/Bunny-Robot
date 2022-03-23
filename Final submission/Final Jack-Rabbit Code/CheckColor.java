@@ -19,6 +19,8 @@ public class CheckColor implements Behavior {
 	final static int HEAD_ROTATION= -120;
 	final static int HEAD_ROTATION_CALIB = 180;
 	final static int ONE_SECOND = 1000;
+	final static int STUMBLING_LEFT = 180;
+	final static int STUMBLING_RIGHT = 360;
 	
 	public CheckColor(BaseRegulatedMotor left, BaseRegulatedMotor right, EV3ColorSensor cs, BaseRegulatedMotor head) {
 		this.mLeft = left;
@@ -61,8 +63,8 @@ public class CheckColor implements Behavior {
 		else if (isDark) {
 			LCD.drawString("I'm blind!", 1, 2);
 			head.rotate(HEAD_ROTATION_CALIB);
-			mLeft.rotate(180, false);
-			mRight.rotate(360, false);
+			mLeft.rotate(STUMBLING_LEFT, false);
+			mRight.rotate(STUMBLING_RIGHT, false);
 			head.rotate(HEAD_ROTATION); //rabbit head movements
 			Sound.buzz();
 		}
