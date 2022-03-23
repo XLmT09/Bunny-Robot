@@ -11,8 +11,8 @@ public class BatteryLevel implements Behavior {
 	
 	public void action() {
 		LCD.clear();
-		LCD.drawString("Battery low!", 0, 0);
-		LCD.drawString("Shutting Down.", 0, 1);
+		LCD.drawString("Battery low!", 1, 2);
+		LCD.drawString("Shutting Down.", 1, 3);
 
 		//delay for messages to persist on LCD
 		Delay.msDelay(5000);
