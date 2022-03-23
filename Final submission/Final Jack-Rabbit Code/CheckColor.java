@@ -52,6 +52,7 @@ public class CheckColor implements Behavior {
 		
 		//startled rabbit movements
 		if(isDark) {
+			LCD.drawString("I'm blind!", 1, 2);
 			head.rotate(HEAD_ROTATION_CALIB);
 			mLeft.rotate(180, false);
 			mRight.rotate(360, false);
