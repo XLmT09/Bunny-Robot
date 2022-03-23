@@ -16,11 +16,11 @@ public class CheckColor implements Behavior {
 	private boolean isDark = false;
 	private boolean isGreenOrange = false;
 	
-	final static int HEAD_ROTATION= -120;
-	final static int HEAD_ROTATION_CALIB = 180;
-	final static int ONE_SECOND = 1000;
-	final static int STUMBLING_LEFT = 180;
-	final static int STUMBLING_RIGHT = 360;
+	private final int HEAD_ROTATION= -120;
+	private final int HEAD_ROTATION_CALIB = 180;
+	private final int ONE_SECOND = 1000;
+	private final int STUMBLING_LEFT = 180;
+	private final int STUMBLING_RIGHT = 360;
 	
 	public CheckColor(BaseRegulatedMotor left, BaseRegulatedMotor right, EV3ColorSensor cs, BaseRegulatedMotor head) {
 		this.mLeft = left;
