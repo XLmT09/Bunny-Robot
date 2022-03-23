@@ -51,20 +51,20 @@ public class CheckColor implements Behavior {
 		mLeft.endSynchronization();
 		
 		//startled rabbit movements
-		if(isDark) {
+		if(isGreenOrange) {
+			LCD.drawString("Ooh - yummy!", 1, 2);
+			LCD.drawString("Don't mind if I do...", 1, 3);
+			Sound.beepSequence();
+			Sound.beepSequenceUp();
+			Delay.msDelay(ONE_SECOND);
+		} 
+		else if (isDark) {
 			LCD.drawString("I'm blind!", 1, 2);
 			head.rotate(HEAD_ROTATION_CALIB);
 			mLeft.rotate(180, false);
 			mRight.rotate(360, false);
 			head.rotate(HEAD_ROTATION); //rabbit head movements
 			Sound.buzz();
-		} 
-		else if (isGreenOrange) {
-			LCD.drawString("Ooh - yummy!", 1, 2);
-			LCD.drawString("Don't mind if I do...", 1, 3);
-			Sound.beepSequence();
-			Sound.beepSequenceUp();
-			Delay.msDelay(ONE_SECOND);
 		}
 
 		//Revert values
