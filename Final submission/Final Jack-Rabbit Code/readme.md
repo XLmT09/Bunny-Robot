@@ -1,5 +1,5 @@
-# Robotics Group 2 - Documentation of final project
-## Project details
+# Robotics Group 2 - Description of Each File
+## Classes
 Java Robotics Project - Robotics Group 2
 <br>
 <br>
