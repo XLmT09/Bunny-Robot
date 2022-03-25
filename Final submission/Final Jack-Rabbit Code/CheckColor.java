@@ -72,6 +72,8 @@ public class CheckColor implements Behavior {
 		//Revert values
 		isGreenOrange = false;
 		isDark = false;
+		
+		LCD.clear();
 	}
 	
 	public void suppress() {
