@@ -18,7 +18,7 @@ class SoundResponse implements Behavior {
 	public SoundResponse(BaseRegulatedMotor mLeft, BaseRegulatedMotor mRight, NXTSoundSensor us, float noise) {
 		this.mLeft = mLeft;
 		this.mRight = mRight;
-		this.noise = noise + 0.8f; //this refers to a sound 0.8 above the average found
+		this.noise = noise + 0.08f; //this refers to a sound 0.8 above the average found
 		this.us = us;
 		this.sp = us.getDBAMode(); //Sample provider set to DBA mode
 	}
@@ -27,7 +27,7 @@ class SoundResponse implements Behavior {
 	public boolean takeControl() {
 		sp.fetchSample(soundSample, 0);
 		
-		return soundSample[0] > noise + 0.8; //return if noise found is 0.8 more than average sound observed
+		return soundSample[0] > noise + 0.8; //return if noise found is 0.08 more than average sound observed
 	}
 
 	@Override
