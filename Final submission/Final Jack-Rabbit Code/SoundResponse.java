@@ -27,7 +27,7 @@ class SoundResponse implements Behavior {
 	public boolean takeControl() {
 		sp.fetchSample(soundSample, 0);
 		
-		return soundSample[0] > noise + 0.8; //return if noise found is 0.08 more than average sound observed
+		return soundSample[0] > noise + 0.08; //return if noise found is 0.08 more than average sound observed
 	}
 
 	@Override
