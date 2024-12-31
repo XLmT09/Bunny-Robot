@@ -1,26 +1,50 @@
-# CS1822RoboticsProjectNew
-## About this repository
-This repository is created for Robotics Group 2 to upload and download files in order to facilitate easier collaboration between group members.
-All group members have migrated from the old repository to this new repository and the old repository has since been archived.
-## Documentation
-This repository has documentation, available here: https://github.com/originalAdamTay/CS1822RoboticsProjectNew/blob/main/documentation.md
-### Bugs and bug fixes
-Within the documentation, there is a section on bugs which we have encountered in the program, sorted by the class in which the bug has been found.<br><br>When you encounter bugs in the program, please add the class in which you have encountered the bug and a brief description of the bug to the documentation in order to facilitate the debugging process.
-#### Fixing of bugs
-When bugs have been fixed, please strike through the description of the bug and state that the bug has been fixed. After a period of time fixed bugs will be removed from the documentation.
-## Organisation of the repository
-Files will be subdivided into directories within the repository to facilitate better organisation and allow for files to be found more easily. When <b>creating new directories</b>,
-please create a new lipsum (<i>lorem ipsum</i>) text file to populate the empty folder until files have been organised. After moving files to directories, the lipsum file can be deleted.
-## Credits in files
-When creating files for the final project, please add an LCD.drawString() method at 0, 1 below the version numbering which contains the name of the file and the author's name, as follows: <b>LCD.drawString("Example file name by Author", 0, 1)</b>.
-## Facilitating version control
-### Making changes to files
-In each file uploaded to the repository, there should be a printVersion() method. The first iteration of each program will be denoted as V1 on the repository. 
-When making changes to the file, please update this method by incrementing the major number if making major changes, and adding/incrementing a minor number if making minor changes.
-### Making changes to SplashScreen.java
-In the SplashScreen.java file (already uploaded to the repository), there is both a printVersion() method and version numbering in the main method. When updating the <b>entire</b> robot, the version number should be incremented in the same manner as aforementioned, and when editing each file individually, the version numbering in printVersion() should be updated.
+# LeJos Bunny Robot
+In this project, we designed and built an intelligent robotic bunny using LEGO bricks, the LeJOS EV3 platform, and its advanced sensors. The LeJOS EV3 provides a lightweight Java Virtual Machine (JVM) that enables Java programming for LEGO robots. It also offers a comprehensive library for controlling motors, sensors, and other hardware components, giving us the tools to create a responsive and lifelike robotic bunny.
 
-## Credits
+## 1 Features
+The goal of this project was to replicate the behavior of a real bunny through creative engineering and programming. The robotic bunny moves using a unique hybrid mechanism: it is equipped with two rear wheels for propulsion and two front legs that lift the bunny’s body off the ground, mimicking the characteristic "hopping" motion of a rabbit.
+
+### 1.1 Features Included are:
+- **Hybrid Hopping Mechanism:**
+The rear wheels provide forward movement, while the two front legs lift the bunny’s body to create a convincing hopping motion.\
+- **Environmental Awareness and Interaction:**
+  - **Obstacle Avoidance:** The bunny uses ultrasonic and touch sensors to detect obstacles and prevent collisions. It also ensures safety by avoiding falls from elevated surfaces, such as tables.
+  - **Color-Based Behavior:** Using its EV3 color sensor, the bunny recognizes specific colors—green for grass and orange for carrots—and accelerates toward them, simulating excitement.
+  - **Sound Sensitivity:** The robot responds to loud noises by "getting scared," stopping in place, and looking around as if startled.
+  - **Low-Light Adaptation:** In the dark, the bunny hops "blindly," adding an unpredictable and playful dimension to its behavior.
+
+## 2 Robot Technical Specifications
+### 2.1 Classes
+**Driver Class:**\
+The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.\
+**Arbitrator Class:**\
+Link to leJOS documentation on Arbitrator class: https://lejos.sourceforge.io/ev3/docs/lejos/robotics/subsumption/Arbitrator.html\
+**Walkabout Class**\
+The Walkabout class is an overarching behaviour class that combines all movement-related behaviour classes together, except the TableTrundle and Obstacle classes.
+**TableTrundle and Obstacle Classes**\
+Both the TableTrundle and Obstacle classes will handle the behaviour of the robot if it is near the edge of the table, or if it encounters an obstacle respectively, and will be of separate priorities to the main Walkabout class of behaviours.
+
+### 2.2 Behaviour priorities
+Priorities of behaviours to be executed from highest to lowest:
+1. BatteryLevel
+2. EmergencyStop
+3. RabbitSounds
+4. Walkabout
+
+## 2.3 Positions of Sensors
+Sensors are located in the following ports on the brick:
+* Sensor port 1 - Touch sensor
+* Sensor port 2 - Sound sensor
+* Sensor port 3 - Light sensor
+* Sensor port 4 - Ultrasonic sensor
+
+## 3 Contributors
+- Hijithan Arunthavarajah
+- Sam Brown
+- Bharat Karki
+- Adam Tay
+
+## 4 Credits
 1. [Inspiration Design for the Project](https://ev3lessons.com/RobotDesigns/instructions/EAST3RBUNNY.pdf)
 2. [Sound File Implentation](https://gist.github.com/andibakti/0d5162f6c0ddd007131af83dd3537acd)
 3. [Happy Sound](https://www.youtube.com/watch?v=m-uVpN4djzE)
