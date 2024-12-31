@@ -1,7 +1,14 @@
 # LeJos Bunny Robot
-In this project, we designed and built an intelligent robotic bunny using LEGO bricks, the LeJOS EV3 platform, and its advanced sensors. The LeJOS EV3 provides a lightweight Java Virtual Machine (JVM) that enables Java programming for LEGO robots. It also offers a comprehensive library for controlling motors, sensors, and other hardware components, giving us the tools to create a responsive and lifelike robotic bunny.
+![LeJOS EV3](https://img.shields.io/badge/Platform-LeJOS%20EV3-blue)
+![Java](https://img.shields.io/badge/Language-Java-blue)
+![Last Developed Year](https://img.shields.io/badge/Last%20Developed-March2022-blue)
+![No Longer Maintained](https://img.shields.io/badge/Maintenance-No%20Longer%20Maintained-red)
 
-## 1 Features
+In this project, we designed and built an intelligent robotic bunny using LEGO bricks, the LeJOS EV3 platform, and its advanced sensors. The LeJOS EV3 provides a lightweight Java Virtual Machine (JVM) that enables Java programming for LEGO robots. It also offers a comprehensive [library](https://lejos.sourceforge.io/ev3/docs/) for controlling motors, sensors, and other hardware components, giving us the tools to create a responsive and lifelike robotic bunny.
+
+<img src="bunnyImage.jpg" alt="Screenshot" width="380" height="300">
+
+## ✏️ 1 Features
 The goal of this project was to replicate the behavior of a real bunny through creative engineering and programming. The robotic bunny moves using a unique hybrid mechanism: it is equipped with two rear wheels for propulsion and two front legs that lift the bunny’s body off the ground, mimicking the characteristic "hopping" motion of a rabbit.
 
 ### 1.1 Features Included are:
@@ -13,7 +20,7 @@ The rear wheels provide forward movement, while the two front legs lift the bunn
   - **Sound Sensitivity:** The robot responds to loud noises by "getting scared," stopping in place, and looking around as if startled.
   - **Low-Light Adaptation:** In the dark, the bunny hops "blindly," adding an unpredictable and playful dimension to its behavior.
 
-## 2 Robot Technical Specifications
+## 📕 2 Robot Technical Specifications
 ### 2.1 Classes
 - **BatteryLevel:** Runs the `BatteryLevel` behavior of the robot to ensure that the program doesn't run if the battery gets too low.
 - **Calibrate:** Runs calibration for the `SoundSensor` object, so that when `SoundResponse` runs it isn't too sensitive.
@@ -31,20 +38,20 @@ Priorities of behaviours to be executed from highest to lowest:
 3. RabbitSounds
 4. Walkabout
 
-## 2.3 Positions of Sensors
+### 2.3 Positions of Sensors
 Sensors are located in the following ports on the brick:
 * Sensor port 1 - Touch sensor
 * Sensor port 2 - Sound sensor
 * Sensor port 3 - Light sensor
 * Sensor port 4 - Ultrasonic sensor
 
-## 3 Contributors
+## ⚡3 Contributors
 - Hijithan Arunthavarajah
 - Sam Brown
 - Bharat Karki
 - Adam Tay
 
-## 4 Credits
+## 📝4 Credits
 1. [Inspiration Design for the Project](https://ev3lessons.com/RobotDesigns/instructions/EAST3RBUNNY.pdf)
 2. [Sound File Implentation](https://gist.github.com/andibakti/0d5162f6c0ddd007131af83dd3537acd)
 3. [Happy Sound](https://www.youtube.com/watch?v=m-uVpN4djzE)
