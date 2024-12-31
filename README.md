@@ -15,14 +15,14 @@ The rear wheels provide forward movement, while the two front legs lift the bunn
 
 ## 2 Robot Technical Specifications
 ### 2.1 Classes
-**Driver Class:**\
-The Driver class is the main class that will combine all behaviours together through use of an Arbitrator object.\
-**Arbitrator Class:**\
-Link to leJOS documentation on Arbitrator class: https://lejos.sourceforge.io/ev3/docs/lejos/robotics/subsumption/Arbitrator.html\
-**Walkabout Class**\
-The Walkabout class is an overarching behaviour class that combines all movement-related behaviour classes together, except the TableTrundle and Obstacle classes.
-**TableTrundle and Obstacle Classes**\
-Both the TableTrundle and Obstacle classes will handle the behaviour of the robot if it is near the edge of the table, or if it encounters an obstacle respectively, and will be of separate priorities to the main Walkabout class of behaviours.
+- **BatteryLevel:** Runs the `BatteryLevel` behavior of the robot to ensure that the program doesn't run if the battery gets too low.
+- **Calibrate:** Runs calibration for the `SoundSensor` object, so that when `SoundResponse` runs it isn't too sensitive.
+- **CheckColor:** Checks for changes in color in the environment, reacting to black as if it's blind, and green or orange as if it's food.
+- **EmergencyStop:** Causes the program to shut off and exit when the `ENTER` button of the EV3 brick is pressed.
+- **Forward:** Simple behavior, just causes the program to move forward indefinitely unless another behavior takes hold.
+- **Main:** The main class of the program, ties together all the behaviors and calibration necessary, also initialising sensors and motors.
+- **SoundResponse:** Causes the robot to stop for three seconds if a (relatively) loud noise is detected.
+- **TableTrundle:** Checks for changes in the floor of the environment, to ensure that it does not fall off of a ledge or table, and also for obstacles to ensure it does not crash into them.
 
 ### 2.2 Behaviour priorities
 Priorities of behaviours to be executed from highest to lowest:
