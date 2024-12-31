@@ -20,3 +20,9 @@ When making changes to the file, please update this method by incrementing the m
 ### Making changes to SplashScreen.java
 In the SplashScreen.java file (already uploaded to the repository), there is both a printVersion() method and version numbering in the main method. When updating the <b>entire</b> robot, the version number should be incremented in the same manner as aforementioned, and when editing each file individually, the version numbering in printVersion() should be updated.
 
+## Credits
+1. [Inspiration Design for the Project](https://ev3lessons.com/RobotDesigns/instructions/EAST3RBUNNY.pdf)
+2. [Sound File Implentation](https://gist.github.com/andibakti/0d5162f6c0ddd007131af83dd3537acd)
+3. [Happy Sound](https://www.youtube.com/watch?v=m-uVpN4djzE)
+4. [Scared Sound](https://www.youtube.com/watch?v=S83hCpKBgeQ) 
+5. [Eating Sound](https://www.youtube.com/watch?v=xgPCtX3EvPI)
